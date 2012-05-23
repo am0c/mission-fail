@@ -22,7 +22,7 @@ resist <- data.frame(
 sink("section-rout-3.txt");
 
 ret <- var.test(resist$val[resist$case == 0], resist$val[resist$case == 1],
-  alternative = c("two.sided"))
+  alternative = c("two.sided"), conf.level = 0.95)
 print(ret)
 
 ret <- t.test(resist$val[resist$case == 0], resist$val[resist$case == 1],
