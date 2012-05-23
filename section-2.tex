@@ -1,0 +1,70 @@
+\section{수치에 의한 자료의 정리}
+다음은 어느 한 상장회사의 최근 25일간의 폐장 시 주가를 차례대로 기록한 것이다.
+
+\begin{tabularx}{0.9\textwidth}{ l|X }
+  \multicolumn{2}{r}{\small(단위: 원)} \\
+  \noalign{\smallskip}\hline\noalign{\smallskip}
+  국내기업 &
+  13100, 13500, 12900, 12300, 13000, 13600, 13400, 14000, 14600, 15000,
+  15700, 16300 \\
+  국외기업 &
+  15300, 15000, 14800, 15100, 15300, 15800, 16100, 16500, 16000, 15500,
+  15900, 16000, 16000
+\end{tabularx}
+
+\begin{enumerate}
+  \item 위 자료들에 대한 평균값, 중앙값, 최빈값을 구하여라.
+  \item 위의 자료에 대한 범위, 표본분산, 표본표준편차, 변이계수 등을 구하라.
+  \item 위의 값들에 대한 $25\%$ 백분위수 및 $75\%$ 백분위수를 구하라.
+  \item 위의 주가자료에 대하여 상자그림을 그려라.
+  \item 국내, 국외, 전체 기업에 대하여 신뢰구간을 구하라.
+\end{enumerate}
+
+R 스크립트를 작성하여 아래와 같이 결과를 얻었다.
+
+\VerbatimInput[numbers=none]{section-rout-2.txt}
+
+\subsection{기업의 분석}
+\begin{figure}[b]
+  \begin{subfigure}[b]{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{section-img-2-1a.pdf}
+    \caption{국내기업의 상자그림}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{section-img-2-2a.pdf}
+    \caption{국외기업의 상자그림}
+  \end{subfigure}
+  \caption{기업의 상자그림}
+\end{figure}
+
+\subsection{국내기업}
+
+평균 13950원이고 최소 12300원, 최고 16300원이다.
+$25\%$ 백분위수는 13080원이고 $75\%$ 백분위수는 14700원이다.
+범위와 표본분산, 표본표준편차, 변이계수는 위에 나타내었다.
+상자그림을 보면 국내기업은 평균보다 낮은 주가를 중심으로 더 밀집되어 있다.
+
+\subsection{국외기업}
+
+평균 15640원이고 최소 14800원, 최고 16500원이다.
+$25\%$ 백분위수는 15300원이고 $75\%$ 백분위수는 16000원이다.
+범위와 표본분산, 표본표준편차, 변이계수는 위에 나타내었다.
+상자그림을 보면 국외기업은 평균보다 높은 주가를 중심으로 더 밀집되어 있다.
+
+\subsection{전체기업}
+
+평균 14830원이고 최소 12300원, 최고 16500원이다.
+$25\%$ 백분위수는 13600원이고 $75\%$ 백분위수는 15900원이다.
+범위와 표본분산, 표본표준편차, 변이계수는 위에 나타내었다.
+국내와 국외의 기업 상자그림을 비교하면 두 기업의 분포도는 비슷하지만,
+외국기업이 전체적으로도 더 높은 평균 주가를 가지고 있고, 평균 주가보다
+더 높은 주가를 중심으로 더 밀집되어 있다는 것을 알 수 있다.
+
+%% TODO - Confidence Interval 분석
+
+\subsection{스크립트}
+아래와 같이 R 스크립트를 작성했다.
+
+\VerbatimInput{section-2.R}
