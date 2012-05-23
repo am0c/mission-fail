@@ -5,10 +5,11 @@ all: index.tex section-1 section-2 section-3
 section-1: section-1.tex section-1.R
 	r section-1.R
 
-section-2: section-2.tex
+section-2: section-2.tex section-2.R
 	r section-2.R
 
-section-3: section-3.tex
+section-3: section-3.tex section-3.R
+	r section-3.R
 
 section-4: section-4.tex
 
