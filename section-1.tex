@@ -12,21 +12,6 @@
   34, 32, 32, 29, 28, 30, 29, 31, 29, 28, 30, 29, 29, 27, 28 \\
 \end{tabularx}
 
-\subsection{도시의 분석}
-\begin{figure}[b]
-  \begin{subfigure}[b]{0.5\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{section-img-1-1a.pdf}
-    \caption{도시의 히스토그램}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.5\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{section-img-1-1b.pdf}
-    \caption{도시의 점그림}
-  \end{subfigure}
-  \caption{도시의 최고기온 그래프}
-\end{figure}
-
 도시의 최고기온을 분포를 히스토그램으로 그려보면
 최고기온의 분포가 종 모양이고, 약간 좌쪽으로 치우친 일반형이다.
 자료가 가운데로 집중되어 있다. 32도와 34도 사이의 최고기온을 보이는 경우가 가장 많고,
@@ -34,25 +19,28 @@
 최고기온이 36도와 38도 사이인 경우는 38도로 단 한번으로 특이점으로 볼 수 있다.
 하지만 자료의 수가 충분히 많지 않기 때문에 특이점으로 단정하기는 쉽지 않다.
 
+\subsection{도시의 분석}
+
 \VerbatimInput[numbers=none]{section-img-1-1c.txt}
 
 한편 줄기-입그림을 보더라도 30도에서 35도 사이가 가장 높은 빈도를 차지하는 것을
 알 수 있다.
 
-\subsection{농촌의 분석}
-\begin{figure}[b]
-  \begin{subfigure}[b]{0.5\textwidth}
+\begin{figure}[!hb]
+  \begin{subfigure}{0.5\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{section-img-1-2a.pdf}
-    \caption{농촌의 히스토그램}
+    \includegraphics[width=\textwidth]{section-img-1-1a.pdf}
+    \caption{도시의 히스토그램}
   \end{subfigure}
-  \begin{subfigure}[b]{0.5\textwidth}
+  \begin{subfigure}{0.5\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{section-img-1-2b.pdf}
-    \caption{농촌의 점그림}
+    \includegraphics[width=\textwidth]{section-img-1-1b.pdf}
+    \caption{도시의 점그림}
   \end{subfigure}
-  \caption{농촌의 최고기온 그래프}
+  \caption{도시의 최고기온 그래프}
 \end{figure}
+
+\subsection{농촌의 분석}
 
 농촌의 최고기온 분포를 히스토그램으로 그리면 좌측으로 치우친 그림이 나온다.
 주로 27도와 29도 사이의 최고기온을 보인다. 그보다 높은 최고기온을 보이는 경우가 있지만,
@@ -60,7 +48,21 @@
 것을 알 수 있다. 즉, 27도와 34도 사이의 구간 내에서 최고기온이 높을수록 빈도는 낮게
 분포되어 있다는 것을 알 수 있다.
 
-\VerbatimInput[numbers=none]{section-img-1-2c.txt}
+\begin{figure}[!hb]
+  \begin{subfigure}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{section-img-1-2a.pdf}
+    \caption{농촌의 히스토그램}
+  \end{subfigure}
+  \begin{subfigure}{0.5\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{section-img-1-2b.pdf}
+    \caption{농촌의 점그림}
+  \end{subfigure}
+  \caption{농촌의 최고기온 그래프}
+\end{figure}
+
+\BVerbatimInput[numbers=none]{section-img-1-2c.txt}
 
 줄기-입그림을 보면 최고기온이 32나 33도인 지점은 주변 구간에 비해 적은 것을 알 수
 있는데, 통계량의 크기가 충분히 커지면 쌍봉우리형 분포를 보일 가능성이 있어보인다.
