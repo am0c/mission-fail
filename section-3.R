@@ -21,9 +21,10 @@ resist <- data.frame(
 
 sink("section-rout-3.txt");
 
-var.test(resist$val[resist$case == 0], resist$val[resist$case == 1],
+ret <- var.test(resist$val[resist$case == 0], resist$val[resist$case == 1],
   alternative = c("two.sided"))
+print(ret)
 
-t.test(resist$val[resist$case == 0], resist$val[resist$case == 1],
+ret <- t.test(resist$val[resist$case == 0], resist$val[resist$case == 1],
   alternative = c("two.sided"), mu = 0, var.equal = FALSE)
-
+print(ret)
