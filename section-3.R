@@ -22,9 +22,15 @@ resist <- data.frame(
 sink("section-rout-3.txt");
 
 ret <- var.test(resist$val[resist$case == 0], resist$val[resist$case == 1],
-  alternative = c("two.sided"), conf.level = 0.95)
+    alternative = c("two.sided"), conf.level = 0.95)
 print(ret)
 
+if (ret$estimate[[1]] == 1) {
+  is_equal = TRUE
+} else {
+  is_equal = FALSE
+}
+
 ret <- t.test(resist$val[resist$case == 0], resist$val[resist$case == 1],
-  alternative = c("two.sided"), mu = 0, var.equal = FALSE)
+  alternative = c("two.sided"), mu = 0, var.equal = is_equal)
 print(ret)
