@@ -1,7 +1,7 @@
 \section{실험계획법: 분산분석}
 아래 표는 어떤 기계의 부품이 세 가지의 다른 윤활유를 사용할 때 마찰에
 의해 손실된 무게이다. 윤활유의 종류에 따라 손실된 정도가 어떻게 다른가
-유의수준 1\%로 검정하라.
+유의수준 1\%로 검정하라. {\small(단위: mg)}
 
 \begin{tabularx}{0.9\textwidth}{ l|XXXXXXXXXXX }
   \noalign{\smallskip}\hline\noalign{\smallskip}
@@ -9,4 +9,18 @@
   윤활유 Y & 8 & 10 & 7 & 5 & 6 & 10 & 7 & 8 & 11 & 7 & 8\\
   윤활유 Z & 9 & 3 & 7 & 8 & 4 & 6 & 6 & 5
 \end{tabularx}
+
+\subsection{풀이}
+
+반응결과에 영향을 주는 주요 원인을 찾기 위해 세 개 이상의 평균을 비교하여
+분산분석하는 경우이다.
+
+\VerbatimInput[numbers=none]{section-rout-5.txt}
+
+\subsection{스크립트}
+아래와 같이 R 스크립트를 작성했다.
+
+\VerbatimInput{section-5.R}
+
+
 
