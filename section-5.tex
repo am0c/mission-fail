@@ -10,15 +10,46 @@
   윤활유 Z & 9 & 3 & 7 & 8 & 4 & 6 & 6 & 5
 \end{tabularx}
 
-\subsection{풀이}
+\subsection{검정}
 
 반응결과에 영향을 주는 주요 원인을 찾기 위해 세 개 이상의 평균을 비교하여
 분산분석하는 경우이다.
 
 \VerbatimInput[numbers=none]{section-rout-5.txt}
 
+\[
+F = V_a / V_e = 11.035 > F(2, 24; 0.01) = 5.613
+\]
+
+기각역 $F(2, 24; 0.01)$은 R에서 \texttt{qf} 함수를 사용하여
+\texttt{qf(0.99, 2, 24)}와 같이 구할 수 있다.
+
+위 식을 계산하여 $F$-값이 기각역보다 더 크다는 것을 알 수 있다.
+따라서 마찰에 의해 손실된 무게에는 유의한 차이가 있다고 할 수 있다.
+유의수준 $0.01$에 비해 유의확률이 약 $0.0004$으로 아주 작은 것도 유의한 영향을 준다는 사실을 뒷받힘한다.
+이에따라 이 요인의 모평균을 각 수준에서 비교할 필요가 있다.
+
+\subsection{신뢰구간}
+
+주어진 요인의 각 수준에서 모평균의 신뢰구간 범위를 구하려면 아래의 식을 사용한다.
+
+\[
+ \bar{x}_{i\cdot} \pm t\left(\phi_E; \frac{\alpha}{2}\right) \sqrt{\frac{V_E}{m}}
+\]
+
+또는 R에서 \texttt{confint} 함수를 사용하여 구간을 구할 수 있다.
+그래프로 나타내면 \ref{ci}와 같다.
+
+\begin{figure}[!hb]
+  \centering
+  \includegraphics[width=0.5\textwidth]{section-img-5-1.pdf}
+  \caption{각 수준 모평균의 신뢰구간}
+  \label{ci}
+\end{figure}
+
 \subsection{스크립트}
 아래와 같이 R 스크립트를 작성했다.
+
 
 \VerbatimInput{section-5.R}
 

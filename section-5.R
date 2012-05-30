@@ -8,5 +8,19 @@ oneway <- data.frame(
     3, 3, 3, 3, 3, 3, 3, 3))
 )
 
+model = aov(mg ~ case, data = oneway)
+
 sink("section-rout-5.txt");
-print(summary(aov(mg ~ case, data = oneway)))
+print(summary(model))
+
+cat("\nconfidence interval:\n")
+print(confint(model, level = 0.95))
+
+# hsd = TukeyHSD(model, "case", ordered = TRUE)
+# npdf("section-img-5-1.pdf")
+#   plot(hsd)
+# dev.off()
+
+pdf("section-img-5-1.pdf")
+  plot(confint(model, level = 0.95))
+dev.off()

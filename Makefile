@@ -7,7 +7,7 @@ section-3-data = section-rout-3.txt
 section-4-data = section-rout-4.txt
 section-5-data = section-rout-5.txt
 
-all: index.tex section-1 section-2 section-3 section-4
+all: index.tex section-1 section-2 section-3 section-4 section-5
 	pdflatex index.tex
 
 section-1: section-1.tex $(section-1-data)
