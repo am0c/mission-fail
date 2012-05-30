@@ -16,11 +16,8 @@ print(summary(model))
 cat("\nconfidence interval:\n")
 print(confint(model, level = 0.95))
 
-# hsd = TukeyHSD(model, "case", ordered = TRUE)
-# npdf("section-img-5-1.pdf")
-#   plot(hsd)
-# dev.off()
+library(gplots)
 
 pdf("section-img-5-1.pdf")
-  plot(confint(model, level = 0.95))
+  plotmeans(mg ~ case, data = oneway, p = 0.95)
 dev.off()
